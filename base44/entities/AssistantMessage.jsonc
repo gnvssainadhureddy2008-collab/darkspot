@@ -1,0 +1,39 @@
+{
+  "name": "AssistantMessage",
+  "type": "object",
+  "properties": {
+    "investigation_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "user",
+        "assistant"
+      ],
+      "default": "user"
+    },
+    "content": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "investigation_id",
+    "role",
+    "content"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

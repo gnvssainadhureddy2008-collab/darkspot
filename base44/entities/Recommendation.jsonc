@@ -1,0 +1,52 @@
+{
+  "name": "Recommendation",
+  "type": "object",
+  "properties": {
+    "investigation_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "question",
+        "source",
+        "verification",
+        "step"
+      ],
+      "default": "step"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "default": "medium"
+    }
+  },
+  "required": [
+    "investigation_id",
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "name": "Source",
+  "type": "object",
+  "properties": {
+    "investigation_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "file_name": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "website",
+        "document",
+        "note"
+      ],
+      "default": "note"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "collected",
+        "analyzing",
+        "analyzed",
+        "failed"
+      ],
+      "default": "pending"
+    },
+    "content": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "published_date": {
+      "type": "string"
+    },
+    "site_name": {
+      "type": "string"
+    },
+    "reliability_note": {
+      "type": "string"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "claim_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "investigation_id",
+    "title",
+    "source_type"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Claim",
+  "type": "object",
+  "properties": {
+    "investigation_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_title": {
+      "type": "string"
+    },
+    "claim_text": {
+      "type": "string"
+    },
+    "evidence_note": {
+      "type": "string"
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "partial",
+        "unsupported",
+        "unclear"
+      ],
+      "default": "unclear"
+    },
+    "date_reference": {
+      "type": "string"
+    },
+    "verification_needed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "investigation_id",
+    "claim_text"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

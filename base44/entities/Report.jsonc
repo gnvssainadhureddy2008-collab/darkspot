@@ -1,0 +1,53 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "investigation_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "research_question": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "completeness": {
+      "type": "number",
+      "default": 0
+    },
+    "gap_count": {
+      "type": "number",
+      "default": 0
+    },
+    "contradiction_count": {
+      "type": "number",
+      "default": 0
+    },
+    "source_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "investigation_id",
+    "title",
+    "content"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

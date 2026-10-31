@@ -1,0 +1,94 @@
+{
+  "name": "Investigation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "research_question": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "analyzing",
+        "complete",
+        "failed"
+      ],
+      "default": "draft"
+    },
+    "stage": {
+      "type": "string",
+      "default": "queued"
+    },
+    "progress": {
+      "type": "number",
+      "default": 0
+    },
+    "analyses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "key_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completeness": {
+      "type": "number",
+      "default": 0
+    },
+    "source_count": {
+      "type": "number",
+      "default": 0
+    },
+    "gap_count": {
+      "type": "number",
+      "default": 0
+    },
+    "contradiction_count": {
+      "type": "number",
+      "default": 0
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "last_analyzed": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "research_question"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
